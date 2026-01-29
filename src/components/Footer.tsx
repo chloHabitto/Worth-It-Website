@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
             <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Terms of Use</a>
-            <a href="#" className="hover:text-foreground transition-colors">Contact</a>
+            <a href="mailto:chloe@habitto.nl" className="hover:text-foreground transition-colors">Email: chloe@habitto.nl</a>
           </div>
           
           <p className="text-sm text-muted-foreground flex items-center gap-1">

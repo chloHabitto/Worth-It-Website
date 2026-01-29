@@ -149,10 +149,10 @@ const PrivacyPolicy = () => {
             <p>
               For privacy-related questions or requests, please contact us at:{" "}
               <a
-                href="mailto:privacy@worthitapp.com"
+                href="mailto:chloe@habitto.nl"
                 className="text-primary hover:underline"
               >
-                privacy@worthitapp.com
+                chloe@habitto.nl
               </a>
             </p>
           </section>
