@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { cn } from "@/lib/utils";
+import { Link, useLocation } from "react-router-dom";
 import appIcon from "@/assets/WorthIt-appIcon-iOS-Default-1024x1024@1x.png";
 
 const navItems = [
@@ -11,6 +12,7 @@ const navItems = [
 ];
 
 const Header = () => {
+  const location = useLocation();
   const activeSection = useScrollSpy(navItems.map(item => item.id), 150);
 
   const scrollToSection = (id: string) => {
@@ -22,12 +24,20 @@ const Header = () => {
     }
   };
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      scrollToSection("hero");
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          <button 
-            onClick={() => scrollToSection("hero")}
+          <Link
+            to="/"
+            onClick={handleLogoClick}
             className="flex items-center gap-2 text-2xl font-serif text-foreground hover:opacity-80 transition-opacity"
           >
             <img 
@@ -36,7 +46,7 @@ const Header = () => {
               className="w-8 h-8 rounded-xl"
             />
             Worth It<span className="text-gradient">?</span>
-          </button>
+          </Link>
           
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
